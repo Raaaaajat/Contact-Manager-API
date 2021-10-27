@@ -23,6 +23,13 @@ app.use(express.json());
 app.use('/api/post',postRoutes)
 app.use('/api/author',userRoutes)
 dbCon();
+
+app.get("/", (req, res) => {
+	res.status(200).json({
+		message: "Welcome to your personal Contact Manager!"
+	});
+})
+
 app.listen(port, () => {
     console.log(`server started at ${port}`);
 });
